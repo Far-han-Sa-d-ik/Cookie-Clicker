@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Kavoon&subset=latin,latin-ext');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000 url('https://orteil.dashnet.org/cookieclicker/img/darkNoise.png');
+    color: #fff;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#game {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    overflow: hidden;
+}
+
+#sectionLeft {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 30%; min-width: 250px;
+    overflow: hidden;
+    z-index: 10;
+    text-align: center;
+    background: #000 url('https://orteil.dashnet.org/cookieclicker/img/bgBlue.jpg');
+}
+
+#sectionLeft .blackGradient {
+    background: url('https://orteil.dashnet.org/cookieclicker/img/blackGradient.png') repeat-x bottom;
+    position: absolute;
+    left: 0; right: 0; top: 300px; height: 640px;
+    z-index: 1;
+}
+
+#sectionLeft .blackFiller {
+    background: #000;
+    position: absolute; left: 0; right: 0; top: 940px; bottom: 0;
+    z-index: 1;
+}
+
+#bakeryNameAnchor { 
+    position: absolute; 
+    top: 5%; 
+    width: 100%; 
+    z-index: 20; 
+}
+
+#bakeryName {
+    font-family: 'Kavoon', Georgia, serif;
+    font-size: 20px;
+    text-shadow: 0px 2px 4px #000;
+    background: rgba(0,0,0,0.4);
+    padding: 4px 0;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+#cookies {
+    position: absolute;
+    top: 15%; 
+    width: 100%; 
+    z-index: 20;
+    font-family: 'Kavoon', Georgia, serif;
+    font-size: 28px;
+    text-shadow: 0px 0px 4px #000;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 0;
+}
+
+#cookieAnchor {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    width: 256px; height: 256px;
+}
+
+#bigCookie {
+    width: 256px; height: 256px;
+    background: url('https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png');
+    background-size: 256px 256px;
+    cursor: crosshair;
+    transition: transform 0.05s ease;
+}
+#bigCookie:active { 
+    transform: scale(0.95); 
+}
+
+.milk {
+    width: 100%; height: 20%;
+    position: absolute; left: 0; bottom: 0; z-index: 100;
+    opacity: 0.9;
+    background: url('https://orteil.dashnet.org/cookieclicker/img/milkWave.png') repeat-x;
+    animation: wave 4s linear infinite;
+}
+@keyframes wave {
+    0% { background-position-x: 0px; }
+    100% { background-position-x: 500px; }
+}
+
+.cookieNumber {
+    position: absolute;
+    pointer-events: none;
+    width: 200px; margin-left: -100px;
+    z-index: 1000000;
+    text-align: center;
+    font-family: 'Kavoon', Georgia, serif;
+    font-size: 24px;
+    text-shadow: 0px 0px 6px #4F4F4F;
+    animation: floatUp 1s ease-out forwards;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+
+#sectionMiddle {
+    position: absolute;
+    left: 30%; right: 318px; top: 0; bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #000 url('https://orteil.dashnet.org/cookieclicker/img/darkNoise.png');
+}
+
+#comments {
+    padding: 16px; text-align: center; font-size: 16px;
+    height: 40px; overflow: hidden; position: relative;
+    background: rgba(0,0,0,0.4);
+    border-bottom: 2px solid #333;
+}
+#commentsText { padding: 0 64px; font-style: italic; color: #ccc; text-shadow: 1px 1px 1px #000; }
+
+.zoneTitle {
+    font-family: 'Kavoon', Georgia, serif;
+    font-size: 24px;
+    text-shadow: 0px 0px 4px #000;
+    text-align: center;
+    padding: 8px;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 2px solid #444;
+}
+
+.building-row {
+    height: 70px;
+    background: #000 url('https://orteil.dashnet.org/cookieclicker/img/bgBlue.jpg');
+    border-bottom: 4px solid #111;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0px 0px 20px #000 inset;
+    overflow: hidden;
+}
+
+.building-row-label {
+    font-family: 'Kavoon', sans-serif;
+    font-size: 14px;
+    min-width: 100px;
+    text-shadow: 1px 1px 2px #000;
+    flex-shrink: 0;
+}
+
+.building-row-sprites {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+}
+
+.row-icon-box {
+    width: 64px; 
+    height: 64px;
+    position: relative;
+    margin-right: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.row-icon-sprite {
+    width: 64px; 
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    position: absolute;
+}
+
+
+#sectionRight {
+    height: 100%;
+    position: absolute;
+    top: 0; right: 0; width: 318px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #190a05 url('https://orteil.dashnet.org/cookieclicker/img/bgBlue.jpg');
+    border-left: 2px solid #444;
+}
+
+.product {
+    width: 100%; height: 64px;
+    cursor: pointer;
+    background: url('https://orteil.dashnet.org/cookieclicker/img/storeTile.jpg');
+    position: relative;
+    border-bottom: 2px solid #000;
+    display: flex;
+    align-items: center;
+}
+.product:hover { box-shadow: 0px 0px 16px #fff inset; z-index: 20; }
+.product.disabled { opacity: 0.4; cursor: not-allowed; }
+
+.prod-icon-box {
+    width: 64px; 
+    height: 64px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.prod-icon-sprite {
+    width: 64px; 
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    position: absolute;
+    left: 0; top: 0;
+}
+
+.prod-content {
+    padding-left: 10px;
+    text-shadow: 0px 0px 6px #000, 0px 1px 1px #000;
+}
+.prod-title { font-family: 'Kavoon', Georgia, serif; font-size: 18px; color: #fff; }
+.prod-price { font-weight: bold; color: #6f6; }
+.product.disabled .prod-price { color: #f66; }
+
+.prod-owned {
+    position: absolute; right: 15px;
+    font-size: 36px; font-weight: bold; opacity: 0.25;
+    color: #fff; text-shadow: 0px 0px 4px #000;
+}
+
+.separatorLeft, .separatorRight {
+    width: 16px; height: 100%;
+    background: url('https://orteil.dashnet.org/cookieclicker/img/panelVertical.png') repeat-y;
+    position: absolute; top: 0; bottom: 0; z-index: 100;
+}
+.separatorLeft { left: 30%; transform: translateX(-8px); }
+.separatorRight { right: 318px; transform: translateX(8px); }
+
+.separatorBottom {
+    width: 100%; height: 16px;
+    background: url('https://orteil.dashnet.org/cookieclicker/img/panelHorizontal.png') repeat-x;
+    position: absolute; left: 0; bottom: 0;
+}
+
+.framed {
+    background: #000 url('https://orteil.dashnet.org/cookieclicker/img/darkNoise.png');
+    padding: 4px 8px; margin: 4px;
+    border: 3px ridge #d2e248;
+    border-color: #c7cd6e #a48836 #845a36 #a48836;
+    border-radius: 3px;
+    box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.5), 0px 2px 4px rgba(0,0,0,0.25), 0px 0px 6px 1px rgba(0,0,0,0.5) inset;
+}
